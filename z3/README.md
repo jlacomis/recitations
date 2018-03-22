@@ -85,7 +85,7 @@ constraint_x2 = x2 > 20
 constraints.append(constraint_x1)
 constraints.append(constraint_x2)
 
-# The above two lines is the same as using 'And' 
+# The above two lines is the same as using logical 'And' included in z3, used like this:
 # constraints.append(And(constraint_x1, constraint_x2))
 
 s = tuple(constraints)
