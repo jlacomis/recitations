@@ -1,7 +1,7 @@
 # Set up
 
 Download z3 for your platform from the [releases](https://github.com/Z3Prover/z3/releases). Unzip it in a directory of your choosing. You may need 
-to set up a library path so that you can use the Python API. For Linux/Mac, this is `export LD_LIBRARY_PATH=/path/to/z3/bin/`. Check that it works by:
+to set up a library path so that you can use the Python API. For Linux, this is `export LD_LIBRARY_PATH=/path/to/z3/bin/` and Mac `DYLD_LIBRARY_PATH=/path/to/z3/bin`. Check that it works by:
 
 ```
 cd /path/to/z3/bin/python
