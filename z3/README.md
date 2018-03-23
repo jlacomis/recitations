@@ -188,5 +188,10 @@ What if we tell z3 that the variables must be within ascii printable range? `z` 
 
 
 
+# References
 
+- [Z3 online](https://rise4fun.com/Z3)
+- [Z3 Guide](https://rise4fun.com/z3/tutorialcontent/guide#h23)
+- [Python Z3 examples](http://ericpony.github.io/z3py-tutorial/guide-examples.htm)
+- [Python API](http://z3prover.github.io/api/html/namespacez3py.html)
 
