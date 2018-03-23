@@ -68,25 +68,28 @@ So `x0 = e`, `x1 = e`, `x2 = v`, `x3 = e`, `x4 = e`.
 Build up the constraints with a loop. This tries a string of length 2, then 3, then 4, up to 10. A solution is found for n = 5.
 
 ```python
-from z3 import *
-
-for n in xrange(2, 10):
-
-    vars = [BitVec('x'+str(i),32) for i in range(n)]
-
-    constraints = []
-
-    current = 0x1505 * 33 + vars[0]
-    for i in xrange(1,n):
-        current = (current * 33) + vars[i]
-        constraints.append(current)
-
-    last = ((constraints[-1] & 0xFFFFFFFF) == 0xf5c10af)
-    constraint_vars = [And(ord('a') <= i, i <= ord('z')) for i in vars]
-
-    constraint_vars.append(last)
-    s = tuple(constraint_vars)
-
-    print 'Constraints:',s
-    solve(*s)
+from z3 import *  
+  
+for n in xrange(2, 10):  
+  
+    # create a list of n vars  
+    vars = [BitVec('x'+str(i),32) for i in range(n)]  
+    # constraint to ascii character range  
+    constraint_vars = [And(ord('a') <= i, i <= ord('z')) for i in vars]  
+  
+  
+    # initial constraint on first variable  
+    current_constraint = 0x1505 * 33 + vars[0]  
+    # build the constraint in a loop  
+    for i in xrange(1,n):  
+        current_constraint = (current_constraint * 33) + vars[i]  
+  
+    # add the final constraint  
+    constraint = ((current_constraint & 0xFFFFFFFF) == 0xf5c10af)  
+    constraint_vars.append(constraint)  
+  
+    s = tuple(constraint_vars)  
+  
+    # print 'Constraints:',s  
+    solve(*s)  
 ```
