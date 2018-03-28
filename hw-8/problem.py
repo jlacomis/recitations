@@ -38,27 +38,8 @@ def add(i,x1,x2): return (BitVec('B'+str(i),16) & 0x0001)*(x1 + x2)
 def formula(pairs):  
   return True  
   
-def check(pairs):  
-  # Once Z3 gives you a solution for the operators, check your answer on all  
-  # inputs by changing the program function below.  A 'wrong' version adding  
-  # all the inputs has been given as an example.  
-  
-  def program(a,b,c,d): return (a + b + c + d) & 0xFFFF # change the +'s to the correct operators  
-  
-  sat = True  
-  for (a,b,c,d),o in pairs:  
-    sat = sat and (program(a,b,c,d) == o & 0xFFFF)  
-  
-  if sat:  
-    print 'Your program satisfies all IO pairs!'  
-  else:  
-    print 'Your program does not satisfy the IO pairs'  
-  
 if __name__ == '__main__':  
-  
   s = formula(io_pairs)  
   print 'Z3 formula:',s  
   print 'Z3 Solution:'  
-  solve(s)  
-  
-  check(io_pairs)  
+  solve(s)
