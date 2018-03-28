@@ -40,7 +40,7 @@ def formula(pairs):
   
 def check(pairs):  
   # Once Z3 gives you a solution for the operators, check your answer on all  
-  # inputs by by changing the program function below.  A 'wrong' version adding  
+  # inputs by changing the program function below.  A 'wrong' version adding  
   # all the inputs has been given as an example.  
   
   def program(a,b,c,d): return (a + b + c + d) & 0xFFFF # change the +'s to the correct operators  
