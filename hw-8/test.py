@@ -7,7 +7,8 @@ io_pairs = [ ((11, 6, 9, 4), 35840)
            , ((15, 6, 12, 4), 57344)  
            , ((7, 12, 6, 0), 5376)  
            , ((2, 0, 6, 0), 0)  
-           , ((16, 4, 3, 1), 520)  
+           , ((16, 4, 3, 1), 520)
+           ]
            
 def test(pairs):  
   # MANUALLY REPLACE THE "a + b + c + d" WITH A PYTHON EXPRESSION CORRESPONDING TO YOUR ANSWER FROM Z3. If its correct, the test will print 'Your program satisfies all IO pairs!'
